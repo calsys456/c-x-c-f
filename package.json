@@ -18,6 +18,7 @@
     "type": "git",
     "url": "github:calsys456/c-x-c-f"
   },
+  "publisher": "miruku-calsys",
   "contributes": {
     "commands": [
       {
