@@ -1,0 +1,79 @@
+{
+  "name": "c-x-c-f",
+  "displayName": "C-x C-f",
+  "description": "Find File on disk",
+  "version": "0.0.1",
+  "license": "0BSD",
+  "engines": {
+    "vscode": "^1.116.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "./icon.png",
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "homepage": "https://github.com/calsys456/c-x-c-f",
+  "repository": {
+    "type": "git",
+    "url": "github:calsys456/c-x-c-f"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "c-x-c-f.findFile",
+        "title": "C-x C-f: Find File"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "c-x-c-f.findFile",
+        "key": "ctrl+x ctrl+f",
+        "when": "!terminalFocus"
+      }
+    ],
+    "configuration": {
+      "title": "C-x C-f",
+      "properties": {
+        "c-x-c-f.showHiddenFiles": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show hidden files in the picker even if you didn't insert a dot."
+        },
+        "c-x-c-f.openFolderInNewWindow": {
+          "type": "boolean",
+          "default": true,
+          "description": "Open the selected folder in a new window instead of adding it to the workspace."
+        },
+        "c-x-c-f.UIFont": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the font of VSCode UI. Used to calculate alignment in the picker. If not set, the extension will try to guess it based on the OS or using fc-match."
+        },
+        "c-x-c-f.UIFontPostscriptName": {
+          "type": "string",
+          "default": "",
+          "description": "Postscript name of the UI Font, if UI Font is a TrueType Collection (.ttc)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.17",
+    "@types/vscode": "^1.116.0",
+    "eslint": "^9.39.3",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1"
+  },
+  "dependencies": {
+    "@types/fontkit": "^2.0.9",
+    "fontkit": "^2.0.4"
+  }
+}
