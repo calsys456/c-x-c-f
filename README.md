@@ -6,7 +6,9 @@ The missing "Find File" utility for VSCode.
 
 ## Features
 
-Press `Ctrl+X Ctrl+F` to open a file picker and find file you want.
+Press `Ctrl+X Ctrl+F` to open a file picker and find file you want
+
+> Tab completions for file name does not work, select & press `Enter` instead!
 
 > If you've installed other extensions that has already bind `Ctrl+X Ctrl+F` (like Emacs-like extensions), remove existed bindings by `Ctrl+Shift+P Preferences: Open Keyboard Shortcuts` (typically `Ctrl+K Ctrl+S` or `Cmd+K Cmd+S` on darwin)
 
